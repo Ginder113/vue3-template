@@ -1,4 +1,4 @@
-# mail-vue
+# vue3-template
 
 基于 Vue 3 项目模板。
 
