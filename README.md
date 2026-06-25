@@ -18,21 +18,37 @@
 
 ## 快速开始
 
+### 从模板创建新项目
+
 ```bash
+# 使用 degit 克隆（不保留 git 历史）
+npx degit Ginder113/vue3-template <新项目名>
+cd <新项目名>
+
 # 安装依赖
-npm install
+pnpm install
 
 # 启动开发服务器（默认 http://localhost:3001）
-npm run dev
+pnpm dev
+```
+
+### 可用命令
+
+```bash
+# 安装依赖
+pnpm install
+
+# 启动开发服务器（默认 http://localhost:3001）
+pnpm dev
 
 # 构建测试环境
-npm run build:test
+pnpm build:test
 
 # 构建生产环境
-npm run build:production
+pnpm build:production
 
 # 预览构建结果
-npm run preview
+pnpm preview
 ```
 
 ## 项目结构
@@ -96,15 +112,15 @@ mail-vue
 
 | 命令 | 说明 |
 |------|------|
-| `npm run dev` | 启动开发服务器 |
-| `npm run build` | 构建生产版本 |
-| `npm run build:production` | 类型检查 + 生产构建 |
-| `npm run build:test` | 类型检查 + 测试环境构建 |
-| `npm run build:test-only` | 跳过类型检查，直接构建测试环境 |
-| `npm run preview` | 预览构建结果 |
-| `npm run type-check` | TypeScript 类型检查 |
-| `npm run lint` | ESLint 代码检查并自动修复 |
-| `npm run format` | Prettier 格式化代码 |
+| `pnpm dev` | 启动开发服务器 |
+| `pnpm build` | 构建生产版本 |
+| `pnpm build:production` | 类型检查 + 生产构建 |
+| `pnpm build:test` | 类型检查 + 测试环境构建 |
+| `pnpm build:test-only` | 跳过类型检查，直接构建测试环境 |
+| `pnpm preview` | 预览构建结果 |
+| `pnpm type-check` | TypeScript 类型检查 |
+| `pnpm lint` | ESLint 代码检查并自动修复 |
+| `pnpm format` | Prettier 格式化代码 |
 
 ## 环境变量
 
