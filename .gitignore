@@ -1,0 +1,45 @@
+# 依赖目录
+node_modules
+
+# 构建输出
+dist
+dist-ssr
+coverage
+
+# 日志文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 环境变量文件
+.env
+.env.*.local
+*.local
+
+# 包管理锁文件
+package-lock.json
+
+# 编辑器 / IDE
+.vscode/*
+.figma/*
+.trae/*
+.idea/*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript 构建缓存
+*.tsbuildinfo
+
+# 自动生成类型文件
+auto-import-component.d.ts
+auto-import-function.d.ts
+
+# 操作系统文件
+.DS_Store
