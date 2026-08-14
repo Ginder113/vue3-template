@@ -1,10 +1,11 @@
 import type { PluginOption } from 'vite'
 import { setupAutoImport, setupComponents } from './auto-import'
+import { injectSeo } from './inject-seo'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-export const setupVitePlugins = (): PluginOption[] => {
+export const setupVitePlugins = (env: Record<string, string>): PluginOption[] => {
   const plugins: PluginOption[] = [
     // Vue 插件
     vue(),
@@ -15,7 +16,9 @@ export const setupVitePlugins = (): PluginOption[] => {
     // 自动导入函数
     setupAutoImport(),
     // 自动导入组件
-    setupComponents()
+    setupComponents(),
+    // 注入 SEO 元数据
+    injectSeo(env)
   ]
 
   return plugins

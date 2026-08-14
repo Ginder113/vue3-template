@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:production": "run-p type-check build",
-    "build:test": "run-p type-check build:test-only",
+    "build:development": "pnpm type-check && vite build --mode development",
+    "build:development-only": "vite build --mode development",
+    "build:production": "pnpm type-check && vite build --mode production",
+    "build:production-only": "vite build --mode production",
+    "build:test": "pnpm type-check && vite build --mode test",
     "build:test-only": "vite build --mode test",
     "preview": "vite preview",
     "type-check": "vue-tsc --build",

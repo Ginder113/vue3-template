@@ -1,0 +1,59 @@
+@use "sass:math";
+
+@function vw($px, $base-width: 1920) {
+  @if $px == 1 {
+    @return #{#{$px}px};
+  }
+  @return math.div(round(math.div($px, $base-width) * 100 * 100), 100) * 1vw;
+}
+
+// $px: 像素值, $em: 当前节点字体大小
+@function em($px, $em) {
+  @if $px == 1 {
+    @return #{#{$px}px};
+  }
+  @return math.div(round(math.div($px, $em) * 100), 100) * 1em;
+}
+
+// $px: 像素值, $rem: html节点字体大小
+@function rem($px, $rem: 16) {
+  @if $px == 1 {
+    @return #{#{$px}px};
+  }
+  @return math.div(round(math.div($px, $rem) * 100), 100) * 1rem;
+}
+
+// $px: 像素值, $rem: html节点字体大小, $scale: 最小比例系数(基准: 1524/1920 ≈ 0.875)
+@function size($px, $rem: 16, $scale: 0.875) {
+  @if $px == 1 {
+    @return #{#{$px}px};
+  }
+  $min: max(13, round($px * $scale));
+  @return max(#{$min}px, math.div(round(math.div($px, $rem) * 100), 100) * 1rem);
+}
+
+// 悬停伪类 仅在 hover 事件支持的浏览器中生效
+@mixin hover() {
+  @media screen and (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// 媒体查询
+@mixin screen($num1, $num2: null) {
+  @if $num2 != null {
+    @media screen and (min-width: #{abs($num1)}px) and (max-width: #{abs($num2)}px) {
+      @content;
+    }
+  } @else if $num1 > 0 {
+    @media screen and (max-width: #{abs($num1)}px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: #{abs($num1)}px) {
+      @content;
+    }
+  }
+}

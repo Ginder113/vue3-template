@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: env.BASE_URL || '/',
-    plugins: setupVitePlugins(),
+    plugins: setupVitePlugins(env),
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))

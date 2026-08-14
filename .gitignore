@@ -17,6 +17,9 @@ lerna-debug.log*
 
 # 环境变量文件
 .env
+.env.development
+.env.test
+.env.production
 .env.*.local
 *.local
 
@@ -43,3 +46,8 @@ auto-import-function.d.ts
 
 # 操作系统文件
 .DS_Store
+
+# 用户
+.copy/*
+.test/*
+.docs/*
