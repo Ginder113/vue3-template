@@ -44,7 +44,14 @@ export default defineConfigWithVueTs(
     }
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores([
+    '**/dist/**',
+    '**/dist-ssr/**',
+    '**/coverage/**',
+    '**/.nuxt/**',
+    '**/.output/**',
+    '**/node_modules/**'
+  ]),
 
   {
     ...pluginVitest.configs.recommended,

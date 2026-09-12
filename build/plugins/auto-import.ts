@@ -7,7 +7,7 @@ import path from 'path'
 export const setupAutoImport = () => {
   return AutoImport({
     // 自动导入
-    imports: ['vue'],
+    imports: ['vue', 'vue-router'],
     // 自动导入目录
     dirs: ['element-plus'],
     // 解析器
